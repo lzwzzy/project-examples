@@ -53,4 +53,4 @@ steps:
     artifactoryService: 'rtf-demo'
     buildName: '$(Build.DefinitionName)'
     buildNumber: '$(Build.BuildNumber)'
-    allowFailBuild: true
+    allowFailBuild: false
