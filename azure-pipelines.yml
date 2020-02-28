@@ -43,6 +43,14 @@ steps:
     artifactoryService: 'rtf'
     setProps: 'test.platforms=centos,win64'
     specSource: 'taskConfiguration'
+    fileSpec: |
+      {
+        "files": [
+          {
+            "pattern": "maven-example/*"
+          }
+        ]
+      }
 - task: ArtifactoryBuildPromotion@1
   inputs:
     artifactoryService: 'rtf'
