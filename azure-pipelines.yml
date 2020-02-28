@@ -41,7 +41,7 @@ steps:
   inputs:
     command: 'set'
     artifactoryService: 'rtf'
-    setProps: 'test.platforms=centos,win64;'
+    setProps: 'test.platforms=ubuntu-16.04,x86_64;'
     specSource: 'taskConfiguration'
     fileSpec: |
       {
