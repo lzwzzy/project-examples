@@ -65,7 +65,7 @@ steps:
                           {"artifact.module.build.name": {"$eq": "$(Build.DefinitionName)"}},
                           {"artifact.module.build.number": {"$eq": "$(Build.BuildNumber)"}}
                       ]
-              }
+              }.include("archive.entry")
             }
           }
         ]
