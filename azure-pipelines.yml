@@ -37,6 +37,17 @@ steps:
     artifactoryService: 'rtf'
     buildName: '$(Build.DefinitionName)'
     buildNumber: '$(Build.BuildNumber)'
+- task: ArtifactoryBuildPromotion@1
+  inputs:
+    artifactoryService: 'rtf'
+    buildName: '$(Build.DefinitionName)'
+    buildNumber: '$(Build.BuildNumber)'
+    targetRepo: 'lzw-maven-pro-local'
+    status: 'Released'
+    sourceRepo: 'lzw-maven-dev-local'
+    includeDependencies: true
+    copy: true
+    dryRun: false
 - task: ArtifactoryProperties@1
   inputs:
     command: 'set'
@@ -59,17 +70,6 @@ steps:
           }
         ]
       }
-- task: ArtifactoryBuildPromotion@1
-  inputs:
-    artifactoryService: 'rtf'
-    buildName: '$(Build.DefinitionName)'
-    buildNumber: '$(Build.BuildNumber)'
-    targetRepo: 'lzw-maven-pro-local'
-    status: 'Released'
-    sourceRepo: 'lzw-maven-dev-local'
-    includeDependencies: true
-    copy: true
-    dryRun: false
 - task: ArtifactoryXrayScan@1
   inputs:
     artifactoryService: 'rtf'
