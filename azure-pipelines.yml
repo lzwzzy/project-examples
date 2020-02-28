@@ -53,7 +53,7 @@ steps:
           {
             "pattern": "maven-example/*.war",
             "flat": true
-          }
+          },
           {
             "pattern": "maven-example/*.pom",
             "flat": true
