@@ -32,17 +32,17 @@ steps:
     buildName: '$(Build.DefinitionName)'
     buildNumber: '$(Build.BuildNumber)'
     includeEnvVars: true
+- task: ArtifactoryPublishBuildInfo@1
+  inputs:
+    artifactoryService: 'rtf'
+    buildName: '$(Build.DefinitionName)'
+    buildNumber: '$(Build.BuildNumber)'
 - task: ArtifactoryProperties@1
   inputs:
     command: 'set'
     artifactoryService: 'rtf'
     setProps: 'test.platforms=centos,win64'
     specSource: 'taskConfiguration'
-- task: ArtifactoryPublishBuildInfo@1
-  inputs:
-    artifactoryService: 'rtf'
-    buildName: '$(Build.DefinitionName)'
-    buildNumber: '$(Build.BuildNumber)'
 - task: ArtifactoryBuildPromotion@1
   inputs:
     artifactoryService: 'rtf'
