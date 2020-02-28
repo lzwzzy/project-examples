@@ -48,15 +48,15 @@ steps:
         "files": [
           {
             "pattern": "maven-example/*.jar",
-            "flat": true
+            "flat": 'true'
           },
           {
             "pattern": "maven-example/*.war",
-            "flat": true
+            "flat": 'true'
           },
           {
             "pattern": "maven-example/*.pom",
-            "flat": true
+            "flat": 'true'
           }
         ]
       }
