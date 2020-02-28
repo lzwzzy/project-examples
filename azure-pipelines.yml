@@ -22,10 +22,10 @@ steps:
   inputs:
     mavenPomFile: 'maven-example/pom.xml'
     goals: 'clean install'
-    artifactoryResolverService: 'rtf-demo'
+    artifactoryResolverService: 'rtf'
     targetResolveReleaseRepo: 'maven-releases-virtual'
     targetResolveSnapshotRepo: 'maven-snapshots-virtual'
-    artifactoryDeployService: 'rtf-demo'
+    artifactoryDeployService: 'rtf'
     targetDeployReleaseRepo: 'lzw-maven-dev-local'
     targetDeploySnapshotRepo: 'lzw-maven-dev-local'
     collectBuildInfo: true
@@ -34,12 +34,12 @@ steps:
     includeEnvVars: true
 - task: ArtifactoryPublishBuildInfo@1
   inputs:
-    artifactoryService: 'rtf-demo'
+    artifactoryService: 'rtf'
     buildName: '$(Build.DefinitionName)'
     buildNumber: '$(Build.BuildNumber)'
 - task: ArtifactoryBuildPromotion@1
   inputs:
-    artifactoryService: 'rtf-demo'
+    artifactoryService: 'rtf'
     buildName: '$(Build.DefinitionName)'
     buildNumber: '$(Build.BuildNumber)'
     targetRepo: 'lzw-maven-pro-local'
@@ -50,7 +50,7 @@ steps:
     dryRun: false
 - task: ArtifactoryXrayScan@1
   inputs:
-    artifactoryService: 'rtf-demo'
+    artifactoryService: 'rtf'
     buildName: '$(Build.DefinitionName)'
     buildNumber: '$(Build.BuildNumber)'
     allowFailBuild: false
