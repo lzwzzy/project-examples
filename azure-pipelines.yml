@@ -34,9 +34,9 @@ steps:
     artifactoryService: 'rtf-platform'
     buildName: '$(Build.DefinitionName)'
     buildNumber: '$(Build.BuildNumber)'
-    targetRepo: 'libs-snapshot-local'
+    targetRepo: 'libs-stage-local'
     status: 'Released'
-    sourceRepo: 'libs-stage-local'
+    sourceRepo: 'libs-snapshot-local'
     includeDependencies: true
     copy: true
     dryRun: false
