@@ -48,6 +48,18 @@ steps:
     includeDependencies: true
     copy: true
     dryRun: false
+- task: ArtifactoryPromoterPlus@0
+  inputs:
+    artifactoryService: 'rtf-platform'
+    sourceRepo: 'generic-local'
+    sourcePath: '/test/controlconfig.conf'
+    targetRepo: 'demo-generic-local'
+    targetPath: '/test/controlconfig.conf'
+    status: 'Deployed'
+    copy: 'true'
+    artifacts: true
+    dryRun: false
+    failFast: true
 - task: ArtifactoryProperties@1
   inputs:
     command: 'set'
