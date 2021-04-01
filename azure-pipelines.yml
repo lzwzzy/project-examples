@@ -19,7 +19,7 @@ steps:
     targetResolveSnapshotRepo: 'libs-snapshot'
     artifactoryDeployService: 'rtf-platform'
     targetDeployReleaseRepo: 'libs-release-local'
-    targetDeploySnapshotRepo: 'libs-release-local'
+    targetDeploySnapshotRepo: 'libs-snapshot-local'
     collectBuildInfo: true
     buildName: '$(Build.DefinitionName)'
     buildNumber: '$(Build.BuildNumber)'
