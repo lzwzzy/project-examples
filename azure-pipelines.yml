@@ -14,19 +14,19 @@ steps:
   inputs:
     mavenPomFile: 'maven-example/pom.xml'
     goals: 'clean install'
-    artifactoryResolverService: 'rtf'
-    targetResolveReleaseRepo: 'maven-releases-virtual'
-    targetResolveSnapshotRepo: 'maven-snapshots-virtual'
-    artifactoryDeployService: 'rtf'
-    targetDeployReleaseRepo: 'lzw-maven-dev-local'
-    targetDeploySnapshotRepo: 'lzw-maven-dev-local'
+    artifactoryResolverService: 'rtf-platform'
+    targetResolveReleaseRepo: 'libs-release'
+    targetResolveSnapshotRepo: 'libs-snapshot'
+    artifactoryDeployService: 'rtf-platform'
+    targetDeployReleaseRepo: 'libs-release-local'
+    targetDeploySnapshotRepo: 'libs-release-local'
     collectBuildInfo: true
     buildName: '$(Build.DefinitionName)'
     buildNumber: '$(Build.BuildNumber)'
     includeEnvVars: true
 - task: ArtifactoryPublishBuildInfo@1
   inputs:
-    artifactoryService: 'rtf'
+    artifactoryService: 'rtf-platform'
     buildName: '$(Build.DefinitionName)'
     buildNumber: '$(Build.BuildNumber)'
 - task: ArtifactoryBuildPromotion@1
@@ -55,7 +55,7 @@ steps:
 - task: ArtifactoryProperties@1
   inputs:
     command: 'set'
-    artifactoryService: 'rtf'
+    artifactoryService: 'rtf-platform'
     setProps: 'test.platforms=ubuntu-16.04,x86_64;'
     specSource: 'taskConfiguration'
     fileSpec: |
@@ -68,7 +68,7 @@ steps:
       }
 - task: ArtifactoryXrayScan@1
   inputs:
-    artifactoryService: 'rtf'
+    artifactoryService: 'rtf-platform'
     buildName: '$(Build.DefinitionName)'
     buildNumber: '$(Build.BuildNumber)'
     allowFailBuild: false
