@@ -31,12 +31,12 @@ steps:
     buildNumber: '$(Build.BuildNumber)'
 - task: ArtifactoryBuildPromotion@1
   inputs:
-    artifactoryService: 'rtf'
+    artifactoryService: 'rtf-platform'
     buildName: '$(Build.DefinitionName)'
     buildNumber: '$(Build.BuildNumber)'
-    targetRepo: 'lzw-maven-pro-local'
+    targetRepo: 'libs-snapshot-local'
     status: 'Released'
-    sourceRepo: 'lzw-maven-dev-local'
+    sourceRepo: 'libs-stage-local'
     includeDependencies: true
     copy: true
     dryRun: false
