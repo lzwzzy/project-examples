@@ -1,6 +1,6 @@
 job("job-dsl-artifactory-freestyle-gradle-example") {
     scm {
-        git("https://github.com/JFrog/project-examples.git", "master")
+        git("https://github.com/jfrog/project-examples.git", "master")
     }
 
     configure { node ->
@@ -52,7 +52,6 @@ job("job-dsl-artifactory-freestyle-gradle-example") {
             // === NonStagedBuilds ===
             allowPromotionOfNonStagedBuilds false // Check if you wish that the build promotion operation will be available to all successful builds instead of only staged ones.
             defaultPromotionTargetRepository '' // Default target repository for build promotion.
-            pushToBintrayEnabledConfig true // Check if you wish that the Push to Bintray operation will be available to all successful builds instead of only staged ones.
 
             // === Discard old builds from Artifactory (requires Artifactory Pro) ===
             discardOldBuilds false // Automatically remove old builds stored in Artifactory according to Jenkins's configured policy for discarding old builds.

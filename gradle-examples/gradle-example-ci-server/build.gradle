@@ -16,13 +16,13 @@
 
 buildscript {
   repositories {
-    jcenter()
+    mavenCentral()
   }
 }
 
 allprojects {
   apply plugin: 'java'
-  apply plugin: 'maven'
+  apply plugin: 'maven-publish'
 
   group = 'org.jfrog.example.gradle'
   version = '1.0'
