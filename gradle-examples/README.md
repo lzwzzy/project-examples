@@ -11,6 +11,7 @@ We have included a few sample projects to help you get started using the plugin.
 http://localhost:8081/artifactory<br>
 This URL is defined inside the *build.gradle* file of each project. Please change it if your Artifactory instance is accessible through a different URL.
 * Configure your Artifactory username and password in the *gradle.properties* file for each project
+* Since all example projects are configured to deploy artifacts to 'libs-snapshot-local' repository, it is recommended to create a local repository named *libs-snapshot-local* or change it inside the build.gradle file of each project.
 * Since all example projects are configured to resolve dependencies from 'Maven Central', it is recommended to create a remote repository named *mvn-central*, which proxies *https://repo1.maven.org/maven2* as its URL.
 * CD to one of the project's root directory and run the build using one of the following commands:
 
@@ -49,7 +50,7 @@ In this example, the only Artifactory property configured is "artifactoryPublish
 
 * Make sure to have the "Project uses the Artifactory Gradle Plugin" check box in the CI Server UI unchecked, so that the CI Server Plugin automatically applies the Gradle Artifactory Plugin to your
 build script.
-* In order to publish the build artifacts to Artifactory, the published arrtifacts are added to the archives Gradle configuration.
+* In order to publish the build artifacts to Artifactory, the published artifacts are added to the archives Gradle configuration.
 
 ### gradle-example
 Sample project that uses the Gradle Artifactory Plugin with Gradle Configurations.
@@ -61,9 +62,12 @@ Sample project that uses the Gradle Artifactory Plugin with Gradle Publications.
 Sample project that configures the Gradle Artifactory Plugin with the Gradle Kotlin DSL.
 
 ### gradle-android-example
-Sample project that uses the Gradle Artifactory Plugin to deploy Android application(apk) and library(aar) to Artifactory.
+Sample project that uses the Gradle Artifactory Plugin to deploy Android application (apk) and library (aar) to Artifactory.
 
 Compatible with Android gradle plugin version 3.0.x
+
+### gradle-android-library-ci-server
+Sample project that uses the Gradle Artifactory Plugin to deploy Android library (aar) to Artifactory using one of the [Artifactory CI clients or plugins](#gradle-example-ci-server).
 
 ### gradle-cache-example
 Simple copy of the `gradle-example` project with modified configuration to use Artifactory as an external
